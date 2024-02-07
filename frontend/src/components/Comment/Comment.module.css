@@ -1,0 +1,30 @@
+.container {
+
+  width: 100%;
+  height: fit-content;
+
+  border-top: 1px solid var(--border);
+
+  padding: 30px 0px;
+
+}
+
+.top {
+
+  width: 100%;
+  height: fit-content;
+
+  margin-bottom: 20px;
+
+}
+
+.content {
+
+  width: 100%;
+  height: fit-content;
+
+  font-size: .8125rem;
+
+}
+
+

@@ -1,0 +1,170 @@
+.container {
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+
+.control {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+  height: fit-content;
+
+  border-bottom: 1px solid var(--border);
+
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+
+}
+
+.controlMore {
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+.controlMore.less {
+
+  gap: 10px;
+
+}
+
+.sortBy {
+
+  font-size: 12px;
+  margin-right: 10px;
+
+}
+
+
+.typeButton {
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  height: 34px;
+
+  background-color: var(--secondary);
+  border-radius: 3px;
+
+  padding: 0px 15px;
+
+  transition: all .1s;
+
+}
+.typeButton span {
+
+  font-size: .75rem;
+
+  transition: all .1s;
+
+}
+
+.typeButton:not(.active):hover {
+
+  background-color: var(--secondary-hover);
+
+}
+
+.typeButton.active {
+
+  background-color: var(--primary-opp);
+
+}
+.typeButton.active span {
+
+  color: var(--primary-text-opp);
+
+}
+
+
+
+
+
+.content {
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+  
+  .sortBy {
+
+    display: none;
+
+  }
+
+
+}
+
+
+@media screen and (max-width: 425px) {
+  
+  .control {
+
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+
+}
+
+
+
+
+
+
+
+.loader {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: fit-content;
+
+  margin-top: 50px;
+
+}
+.loader img {
+
+  width: 20px;
+  height: 20px;
+
+  filter: var(--filter);
+
+  animation: spin 3s linear infinite;
+
+}
+.loader span {
+
+  color: var(--secondary-text);
+  font-size: .875rem;
+
+}
+
+
+@keyframes spin {
+  
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+
+}

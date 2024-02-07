@@ -1,0 +1,272 @@
+:root {
+
+  --main: #FE6730;
+
+  --primary: black;
+  --primary-opp: white;
+
+  --secondary: #202020;
+  
+  --secondary-hover: #272727;
+
+  --border: #252525;
+
+  --box-shadow: rgba(0, 0, 0, .05);
+
+  --drop-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.2);
+
+  --primary-text: white;
+  --primary-text-opp: black;
+
+  --secondary-text: #606060;
+  --secondary-text-hover: #808080;
+
+  --filter-opp: brightness(0) saturate(100%);
+  --filter: brightness(0) saturate(100%) invert(100%) sepia(24%) saturate(0%) hue-rotate(19deg) brightness(107%) contrast(101%);
+
+  --opacity-light: 0;
+  --opacity-dark: .1;
+
+  --error-bg: rgba(255, 0, 0, 0.1);
+
+  --white-filter: brightness(0) saturate(100%) invert(100%) sepia(24%) saturate(0%) hue-rotate(19deg) brightness(107%) contrast(101%);
+  --main-filter: brightness(0) saturate(100%) invert(49%) sepia(98%) saturate(2185%) hue-rotate(340deg) brightness(101%) contrast(99%);
+  --secondary-filter: brightness(0) saturate(100%) invert(35%) sepia(0%) saturate(600%) hue-rotate(246deg) brightness(98%) contrast(78%);
+
+}
+
+
+/* :root {
+
+  --main: #FE6730;
+
+  --primary: white;
+  --primary-opp: black;
+
+  --secondary: #f5f5f5;
+  
+  --secondary-hover: #f3f3f3;
+
+  --border: #eeeeee;
+
+  --box-shadow: rgba(0, 0, 0, .05);
+
+  --drop-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.2);
+
+  --primary-text: black;
+  --primary-text-opp: white;
+
+  --secondary-text: #aaaaaa;
+  --secondary-text-hover: #909090;
+
+  --filter: brightness(0) saturate(100%);
+  --filter-opp: brightness(0) saturate(100%) invert(100%) sepia(24%) saturate(0%) hue-rotate(19deg) brightness(107%) contrast(101%);
+
+  --opacity-light: 0;
+  --opacity-dark: .1;
+
+  --error-bg: rgba(255, 0, 0, 0.1);
+
+  --white-filter: brightness(0) saturate(100%) invert(100%) sepia(24%) saturate(0%) hue-rotate(19deg) brightness(107%) contrast(101%);
+  --main-filter: brightness(0) saturate(100%) invert(49%) sepia(98%) saturate(2185%) hue-rotate(340deg) brightness(101%) contrast(99%);
+  --secondary-filter: brightness(0) saturate(100%) invert(73%) sepia(0%) saturate(1%) hue-rotate(141deg) brightness(93%) contrast(92%);
+
+} */
+
+
+
+* {
+
+  box-sizing: border-box;
+
+  padding: 0px;
+  margin: 0px;
+
+  color: var(--primary-text);
+  font-family: Gotham;
+  font-weight: 500;
+
+  text-wrap: nowrap;
+
+}
+
+*::selection {
+
+  background-color: var(--main);
+  color: var(--primary-text);
+
+}
+
+
+body, html, #root {
+
+  margin: 0px;
+  padding: 0px;
+
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
+  
+}
+
+body {
+
+  background-color: var(--primary);
+
+  overflow-x: hidden;
+
+}
+
+
+a {
+
+  text-decoration: none;
+
+}
+
+
+label {
+
+  cursor: text;
+
+}
+
+
+p {
+
+  text-wrap: wrap;
+  margin: 0px;
+  line-height: 150%;
+
+}
+
+
+button {
+
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+}
+
+
+input {
+
+  border: none;
+  outline: none;
+
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  /* Firefox */
+  -moz-appearance: textfield;
+}
+
+
+textarea {
+
+  text-wrap: wrap;
+
+  border: none;
+  outline: none;
+
+  resize: none;
+
+}
+
+
+select {
+
+  cursor: pointer;
+
+  appearance: none;
+
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+}
+
+
+@keyframes spin {
+
+  from {
+
+    transform: rotate(0deg);
+
+  }
+  to {
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+
+
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-Ultra.woff2);
+  font-weight: 900;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-Bold.woff2);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-Medium.woff2);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-Book.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-Light.woff2);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-BoldItalic.woff2);
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-BookItalic.woff2);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-MediumItalic.woff2);
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-LightItalic.woff2);
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/fonts/Gotham-UltraItalic.woff2);
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+

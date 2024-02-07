@@ -1,0 +1,25 @@
+.container {
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+
+.top {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: fit-content;
+
+  border-bottom: 1px solid var(--border);
+
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+
+}
+
+

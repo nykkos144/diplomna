@@ -1,0 +1,46 @@
+.container {
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 5px;
+
+  width: 100%;
+  height: 120px;
+
+  background-color: var(--secondary);
+  border: 1px dashed var(--primary-opp);
+  border-radius: 3px;
+
+  transition: all .1s;
+  
+}
+
+.container:hover {
+
+  background-color: var(--secondary-hover);
+
+}
+
+
+.container input {
+
+  display: none;
+
+}
+
+.container span:first-of-type {
+
+  font-size: .8125rem;
+
+}
+.container span:last-of-type {
+
+  color: var(--secondary-text);
+  font-size: .6875rem;
+
+}

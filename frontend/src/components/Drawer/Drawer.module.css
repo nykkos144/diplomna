@@ -1,0 +1,126 @@
+.container {
+
+  /* position: relative; */
+
+}
+
+
+.cover {
+
+  z-index: 100;
+ 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--primary-opp);
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition: all .2s;
+
+}
+
+
+.contentContainer {
+
+  z-index: 100;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+}
+
+.content {
+
+  
+  width: 450px;
+  height: 100%;
+  
+  max-width: 100%;
+  
+  background-color: var(--primary);
+  border-left: 1px solid var(--border);
+  
+  pointer-events: none;
+  
+  /* transform: translateX(100%); */
+  margin-right: -100%;
+
+  padding: 30px 40px;
+  padding-bottom: 50px;
+
+  overflow: hidden auto;
+
+  transition: all .2s;
+
+}
+
+.content::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+
+.container.open .cover {
+
+  pointer-events: all;
+  opacity: var(--opacity-dark);
+
+}
+.container.open .content {
+
+  pointer-events: all;
+  /* opacity: 1; */
+
+  /* transform: translateX(0%); */
+  margin-right: 0px;
+
+}
+
+
+.control {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: fit-content;
+
+  border-bottom: 1px solid var(--border);
+
+  /* margin-bottom: 30px; */
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+
+}
+
+
+
+
+
+body:has(.open) {
+
+  overflow: hidden;
+
+}
+
+
+
+

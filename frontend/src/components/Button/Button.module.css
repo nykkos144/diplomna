@@ -1,0 +1,120 @@
+.button {
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 3px;
+
+  transition: all .1s;
+
+}
+
+.button span {
+
+  font-size: .8125rem;
+
+}
+.button img {
+
+  width: auto;
+  height: 14px;
+
+  filter: var(--filter);
+
+  transition: rotate .1s;
+
+}
+
+.button.disabled {
+
+  cursor: not-allowed;
+
+}
+
+
+.content {
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  align-self: flex-start;
+
+  width: fit-content;
+  height: 100%;
+
+  transition: all .2s;
+
+}
+
+
+.button.secondaryContent .content {
+
+  grid-template-rows: repeat(2, 1fr);
+
+  height: 200%;
+
+}
+
+.button.secondaryContent.secondaryContentActive .content {
+
+  transform: translateY(-50%);
+
+}
+
+
+.button.primary {
+
+  background-color: var(--primary-opp);
+
+  outline: 3px solid transparent;
+  outline-offset: 0px;
+
+}
+.button.primary span {
+
+  color: var(--primary-text-opp);
+
+}
+.button.primary img {
+
+  filter: var(--filter-opp);
+
+}
+
+.button.primary:not(.disabled):hover {
+
+  outline-color: var(--primary-opp);
+  outline-offset: 3px;
+
+}
+
+.button.secondary {
+
+  background-color: var(--secondary);
+
+}
+
+.button.secondary:not(.disabled):hover {
+
+  background-color: var(--secondary-hover);
+
+}
+
+
+.button:has(span):has(img) {
+
+  justify-content: flex-start;
+
+  padding: 0px 25px;
+  
+}
+

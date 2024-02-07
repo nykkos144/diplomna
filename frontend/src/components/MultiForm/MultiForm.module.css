@@ -1,0 +1,227 @@
+.container {
+
+  /* width: fit-content;
+  height: fit-content; */
+
+}
+
+
+.cover {
+ 
+  z-index: 100;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--primary-opp);
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition: all .2s;
+
+}
+
+
+.contentContainer {
+
+  z-index: 100;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+  /* display: none; */
+
+}
+
+.content {
+
+  display: flex;
+  flex-direction: column;
+
+  width: 500px;
+  height: fit-content;
+  max-height: 90vh;
+
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  overflow: hidden visible;
+
+  pointer-events: none;
+  opacity: 0;
+  /* scale: .7; */
+
+  /* box-shadow: var(--drop-shadow); */
+
+  transition: all .2s;
+
+}
+
+/* .container.open .contentContainer {
+  
+  display: flex;
+
+} */
+.container.open .cover {
+
+  pointer-events: all;
+  opacity: var(--opacity-dark);
+
+}
+.container.open .content {
+
+  pointer-events: all;
+  opacity: 1;
+  /* scale: 1; */
+
+}
+
+
+.top {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+  min-height: 80px;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 0px 30px;
+
+}
+
+.title {
+
+  font-size: .875rem;
+  font-weight: 600;
+
+}
+
+
+.bottom {
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+  height: 110px;
+  min-height: 110px;
+
+  border-top: 1px solid var(--border);
+
+  padding: 0px 30px;
+
+}
+
+
+.formContent {
+
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: fit-content;
+
+  overflow: hidden auto;
+
+  transition: all .2s;
+
+}
+
+.formContent::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+
+
+
+.progressBar {
+
+  position: relative;
+
+  width: 100%;
+  height: fit-content;
+
+}
+.progressBar div {
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  transition: all .2s;
+
+}
+.progressBar div:first-of-type {
+
+  width: 100%;
+
+  border-bottom: 1px solid var(--border);
+
+}
+.progressBar div:last-of-type {
+
+  border-bottom: 1px solid var(--main);
+
+}
+
+
+
+
+
+body:has(.open) {
+
+  overflow: hidden;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 630px) {
+  
+  .content {
+
+    max-width: 100vw;
+    /* width: 100%; */
+    /* height: 100%; */
+
+    /* max-height: none; */
+
+  }
+
+  .formContent {
+
+    height: 100%;
+
+  }
+
+}
+
+

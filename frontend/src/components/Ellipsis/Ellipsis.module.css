@@ -1,0 +1,268 @@
+.container {
+
+  position: relative;
+
+}
+
+
+.cover {
+
+  z-index: 100;
+ 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--primary-opp);
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition: all .2s;
+
+}
+
+
+.content {
+
+  z-index: 100;
+
+  position: absolute;
+
+  width: 100%;
+  min-width: fit-content;
+  height: fit-content;
+
+  border-radius: 3px;
+
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+
+  pointer-events: none;
+  opacity: 0;
+  scale: .7;
+  
+  box-shadow: var(--drop-shadow);
+
+  transition: all .2s;
+
+}
+
+
+.item {
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 46px;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 0px 25px;
+  /* padding-right: 50px; */
+
+  transition: all .1s;
+
+}
+
+.item span {
+
+  font-size: .8125rem;
+  font-weight: 400;
+
+}
+
+.item img {
+
+  height: 13px;
+  width: auto;
+
+  filter: var(--filter);
+
+}
+
+.item:last-of-type {
+
+  border-bottom: none;
+
+}
+
+.item:hover {
+
+  background-color: var(--secondary);
+
+}
+
+
+.item:has(img) {
+
+  display: grid;
+  grid-template-columns: 20px min-content;
+  gap: 15px;
+
+}
+
+
+.container.open .cover {
+
+  pointer-events: all;
+  opacity: var(--opacity-light);
+
+}
+.container.open .content {
+
+  pointer-events: all;
+  opacity: 1;
+  scale: 1;
+
+}
+.container.open .button {
+
+  z-index: 100;
+  position: relative;
+
+}
+
+
+.button {
+
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 18px min-content;
+  
+  justify-items: center;
+  align-items: center;
+  
+  gap: 30px;
+
+  width: 100%;
+  height: 40px;
+
+  background-color: transparent;
+
+  padding: 0px 10px;
+
+}
+
+/* .button.arrow {
+
+  grid-template-columns: 18px 1fr 6px;
+
+} */
+
+
+.button .buttonIcon {
+
+  width: auto;
+  height: 16px;
+
+  filter: var(--filter);
+
+}
+
+.button span {
+
+  font-size: .8125rem;
+
+}
+
+.button .buttonArrow {
+
+  /* float: right; */
+
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  translate: 0px -50%;
+
+  filter: var(--filter);
+
+  height: 9px;
+
+  transition: rotate .1s;
+
+}
+
+
+.button.minified {
+
+  grid-template-columns: 18px;
+  justify-content: center;
+  
+  width: 50px !important;
+
+  padding: 0px;
+
+}
+.button.minified span {
+
+  display: none;
+
+}
+.button.minified .buttonArrow {
+
+  right: 0px;
+
+}
+
+
+.container.open .button, .container.open .buttonComponent {
+
+  position: relative;
+  z-index: 100;
+
+}
+.container.open .button .buttonIcon {
+
+  filter: var(--main-filter);
+
+}
+.container.open .button .buttonArrow {
+
+  filter: var(--main-filter);
+  rotate: 180deg;
+
+}
+.container.open .button span {
+
+  color: var(--main);
+  /* color: white; */
+
+}
+
+.container:not(.open) .button:hover .buttonIcon {
+
+  filter: var(--main-filter);
+  /* filter: var(--white-filter); */
+
+}
+.container:not(.open) .button:hover .buttonArrow {
+
+  filter: var(--main-filter);
+
+}
+.container:not(.open) .button:hover span {
+
+  color: var(--main);
+  /* color: white; */
+
+}
+
+
+
+
+
+
+body:has(.open) {
+
+  overflow: hidden;
+
+}

@@ -1,0 +1,82 @@
+.container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+
+.item {
+
+  cursor: pointer;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 20px 1fr min-content;
+  gap: 20px;
+
+  width: 100%;
+  height: 46px;
+
+  border-radius: 3px;
+
+  padding: 0px 25px;
+  padding-right: 20px;
+
+  transition: all .1s;
+
+}
+
+
+.icon {
+
+  filter: var(--filter);
+
+}
+
+.title {
+
+  font-size: .8125rem;
+
+}
+
+.arr {
+
+  filter: var(--filter);
+
+}
+
+
+.item:not(.active):hover {
+
+  background-color: var(--secondary);
+  
+}
+
+.item.active {
+
+  background-color: var(--primary-opp);
+
+}
+.item.active .icon {
+
+  filter: var(--filter-opp);
+
+}
+.item.active .title {
+
+  color: var(--primary-text-opp);
+
+}
+.item.active .arr {
+
+  filter: var(--filter-opp);
+
+}
+
+

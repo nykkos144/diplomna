@@ -1,0 +1,121 @@
+.container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+.imageContainer {
+
+  /* display: flex; */
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+
+.image {
+
+  cursor: pointer;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 3px;
+
+}
+.image div {
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+  opacity: 0;
+
+  transition: all .1s;
+
+}
+.image img {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 10px;
+  height: auto;
+
+  filter: var(--white-filter);
+
+  opacity: 0;
+
+  transition: all .1s;
+
+}
+
+.image:hover div {
+
+  opacity: .3;
+
+}
+.image:hover img {
+
+  opacity: 1;
+
+}
+
+
+.container.single .imageContainer {
+
+  display: flex;
+
+  height: 240px;
+
+}
+
+.container.multiple .imageContainer {
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+}
+.container.multiple .image {
+
+  width: 100%;
+  height: 90px;
+
+}
+
+
+.cropContainer {
+
+  position: relative;
+
+}
+
+.button {
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+}
+
+

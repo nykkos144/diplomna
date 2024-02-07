@@ -1,0 +1,117 @@
+.container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+.content {
+
+  display: flex;
+  gap: 10px;
+
+  width: 100%;
+  height: 50px;
+
+}
+
+
+.valueContainer {
+
+  display: flex;
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+}
+
+.valueContainer.single {
+
+  flex-direction: column;
+  flex-wrap: nowrap;
+  
+}
+.valueContainer.single .value {
+
+  justify-content: flex-start;
+
+  width: 100%;
+
+}
+.valueContainer.single .value span {
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+
+
+.value {
+  
+  cursor: pointer;
+  
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  height: 34px;
+
+  background-color: var(--secondary);
+  border-radius: 3px;
+
+  padding: 0px 15px;
+
+  transition: all .1s;
+
+}
+
+.value span {
+
+  font-size: .8125rem;
+
+  transition: all .1s;
+
+}
+
+.value img {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: auto;
+  height: 10px;
+
+  filter: var(--filter);
+
+  opacity: 0;
+
+  transition: all .1s;
+
+}
+
+.value:hover {
+
+  background-color: var(--secondary-hover);
+
+}
+.value:hover span {
+
+  opacity: 0;
+
+}
+.value:hover img {
+
+  opacity: 1;
+
+}
+
+

@@ -1,0 +1,72 @@
+.content {
+
+  width: 100%;
+  height: fit-content;
+
+}
+
+.secondary {
+
+  display: none;
+
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+.fixed {
+
+  /* z-index: 100; */
+  z-index: 1;
+
+  /* cursor: pointer; */
+
+  position: fixed;
+  top: 0px;
+  
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+
+  width: 370px;
+  height: 100vh;
+  min-height: fit-content;
+
+  padding: 50px 0px;
+
+  overflow: hidden auto;
+
+  /* background-color: gray; */
+
+}
+
+.fixed::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+
+
+@media screen and (max-width: 1250px) {
+  
+  .fixedContainer {
+
+    display: none;
+
+  }
+
+  .secondary {
+
+    display: block;
+
+  }
+
+}
+
+
+

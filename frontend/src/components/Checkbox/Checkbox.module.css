@@ -1,0 +1,70 @@
+.container {
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  width: fit-content;
+  height: fit-content;
+
+}
+
+.container div {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 13px;
+  height: 13px;
+
+  border: 1px solid var(--primary-opp);
+  border-radius: 1.5px;
+
+  transition: all .1s;
+
+}
+.container div img {
+
+  width: 7px;
+  height: auto;
+
+  filter: var(--filter-opp);
+
+  opacity: 0;
+
+  margin-right: -1px;
+
+  transition: all .1s;
+
+}
+
+
+.container.active div {
+
+  background-color: var(--primary-opp);
+
+}
+.container.active div img {
+
+  opacity: 1;
+
+}
+
+
+.container span {
+
+  font-size: .8125rem;
+
+}
+
+
+.container:not(.active):hover div {
+
+  background-color: var(--secondary-hover);
+
+}
+
