@@ -1,5 +1,3 @@
-import styles from './CreateRecipeForm.module.css';
-
 
 import { IMultiForm } from './../../interfaces/multiform.interface';
 import { IFormData } from './../../interfaces/formData.interface';

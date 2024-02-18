@@ -11,7 +11,7 @@ import { ThemeContext } from '../../contexts/theme.context';
 const Settings = ({ type }: { type: string }) => {
 
 
-  const { theme, changeTheme } = useContext<{ theme: string, changeTheme: (value: string) => void }>(ThemeContext);
+  const changeTheme = useContext<{ theme: string, changeTheme: (value: string) => void }>(ThemeContext).changeTheme;
 
 
   const accountSettings: any = [
@@ -43,7 +43,7 @@ const Settings = ({ type }: { type: string }) => {
       type: 'upload',
       data: {
         type: 'crop',
-        accept: ['images/*']
+        accept: ['image/*']
       }
     },
     {
@@ -53,7 +53,7 @@ const Settings = ({ type }: { type: string }) => {
       type: 'upload',
       data: {
         type: 'single',
-        accept: ['images/*']
+        accept: [ 'image/*' ]
       }
     }
   ];
@@ -86,7 +86,7 @@ const Settings = ({ type }: { type: string }) => {
 
       if (id === 'theme') {
 
-        initialFormData[id] = localStorage.getItem('Theme');
+        initialFormData[id] = localStorage.getItem('Theme') || 'Light';
 
       }
       else {

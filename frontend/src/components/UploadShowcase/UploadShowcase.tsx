@@ -16,14 +16,13 @@ const UploadShowcase = ({
 
   value,
   updateValue,
-  addValue,
   removeValue
 
 }: IUpload & {
 
   value: File [],
   updateValue: (value: File []) => void;
-  addValue: (value: File) => void;
+  addValue?: (value: File) => void;
   removeValue: (type: 'value' | 'index', value: string | number) => void;
 
 }) => {

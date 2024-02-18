@@ -1,11 +1,14 @@
 import axios from 'axios';
 
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+import BACKEND_URL from './../constants/backendUrl.constant';
+
 
 const createRating = async (recipeId: string, rating: number) => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/rating/create',
+    url: `${ BACKEND_URL }/api/rating/create`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },
@@ -21,7 +24,7 @@ const updateRating = async (recipeId: string, rating: number) => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/rating/update',
+    url: `${ BACKEND_URL }/api/rating/update`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },

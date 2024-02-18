@@ -10,4 +10,4 @@ interface IReport {
 }
 
 
-export { IReport }
+export type { IReport }

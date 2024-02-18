@@ -19,7 +19,6 @@ import { ICheckboxGroup } from '../../interfaces/checkbox.interface';
 
 const MultiFormItem = ({
   
-  id,
   title,
   description,
   type,

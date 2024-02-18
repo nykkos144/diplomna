@@ -181,6 +181,9 @@
   color: var(--primary-opp);
   font-size: .8125rem;
 
+  text-wrap: nowrap;
+  white-space: nowrap;
+
 }
 
 

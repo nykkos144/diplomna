@@ -1,11 +1,14 @@
 import axios from 'axios';
 
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+import BACKEND_URL from './../constants/backendUrl.constant';
+
 
 const createFollow = async (followingId: string) => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/follow/create',
+    url: `${ BACKEND_URL }/api/follow/create`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },
@@ -18,7 +21,7 @@ const deleteFollow = async (followingId: string) => {
 
   await axios({
     method: 'DELETE',
-    url: 'http://localhost:5000/api/follow/delete',
+    url: `${ BACKEND_URL }/api/follow/delete`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },

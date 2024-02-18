@@ -1,11 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './UserPage.module.css';
 
 import { IUser } from '../../interfaces/user.interface';
-
-import { UserContext } from '../../contexts/user.context';
 
 import * as userService from './../../services/user.service';
 import * as followService from './../../services/follow.service';
@@ -20,8 +18,6 @@ import NotFound from '../../components/NotFound/NotFound';
 const UserPage = () => {
 
   const { username } = useParams();
-
-  const loggedUser: IUser | null = useContext<{ user: IUser | null, loading: boolean }>(UserContext).user;
   
   const [user, setUser] = useState<IUser | null>(null);
   const [recipes, setRecipes] = useState<IRecipePost [] | null>(null);

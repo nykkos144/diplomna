@@ -1,18 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, Location, redirect, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Location, useLocation, useNavigate } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
-import appStyles from './../../App.module.css';
 
 import { IUser } from '../../interfaces/user.interface';
 
 import { UserContext } from '../../contexts/user.context';
 
 import CreateRecipeForm from '../CreateRecipeForm/CreateRecipeForm';
-
-
-import homeStroke from './../../assets/icons/home-stroke.svg';
-import homeFilled from './../../assets/icons/home-filled.svg';
 
 import feedStroke from './../../assets/icons/feed-stroke.svg';
 import feedFilled from './../../assets/icons/feed-filled.svg';
@@ -24,7 +19,6 @@ import notificationsStroke from './../../assets/icons/notifications-stroke.svg';
 import notificationsFilled from './../../assets/icons/notifications-filled.svg';
 
 import messagesStroke from './../../assets/icons/messages-stroke.svg';
-import messagesFilled from './../../assets/icons/messages-filled.svg';
 
 import libraryStroke from './../../assets/icons/library-stroke.svg';
 import libraryFilled from './../../assets/icons/library-filled.svg';
@@ -43,12 +37,11 @@ import menu from './../../assets/icons/menu.svg';
 import SignInForm from '../SignInForm/SignInForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Ellipsis from '../Ellipsis/Ellipsis';
-import Button from '../Button/Button';
 
 
 const Navbar = () => {
 
-  const { user, loading } = useContext<{ user: IUser | null, loading: boolean }>(UserContext);
+  const user = useContext<{ user: IUser | null, loading: boolean }>(UserContext).user;
 
   const location: Location = useLocation();
   const navigate = useNavigate();

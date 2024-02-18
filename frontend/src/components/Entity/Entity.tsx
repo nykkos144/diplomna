@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './Entity.module.css';
 
 import { IUser } from '../../interfaces/user.interface';
-import { IRecipe } from '../../interfaces/recipe.interface';
 import { IRecipePost } from '../../interfaces/recipePost.interface';
 
 import arrRight from './../../assets/icons/arr-right.svg';

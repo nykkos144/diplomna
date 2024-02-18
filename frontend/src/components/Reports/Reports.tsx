@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 import styles from './Reports.module.css';
 import { IRecipePost } from '../../interfaces/recipePost.interface';
-import { IUser } from '../../interfaces/user.interface';
 
 import * as reportService from './../../services/report.service';
 import * as recipeService from './../../services/recipe.service';
@@ -10,7 +9,6 @@ import * as userService from './../../services/user.service';
 
 import spinner from './../../assets/icons/spinner.svg';
 import Entity from '../Entity/Entity';
-import RecipePost from '../RecipePost/RecipePost';
 import { IUserPost } from '../../interfaces/userPost.interface';
 import Button from '../Button/Button';
 import { getTimeElapsed } from '../../utils/time.util';

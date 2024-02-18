@@ -8,7 +8,6 @@ import Checkbox from '../Checkbox/Checkbox';
 const CheckboxGroup = ({
 
   items,
-  columns,
 
   value,
   addValue,
@@ -16,7 +15,7 @@ const CheckboxGroup = ({
 
 }: ICheckboxGroup & { value: [], addValue: (value: string) => void, removeValue: (type: 'value' | 'index', value: string | number) => void }) => {
 
-  const updateValue = (item: string, index: number) => {
+  const updateValue = (item: string) => {
 
     const active: boolean = (value as string []).includes(item);
 
@@ -44,7 +43,7 @@ const CheckboxGroup = ({
             key={ index }
             title={ item }
             active={ (value as string []).includes(item) }
-            setActive={() => updateValue(item, index)}
+            setActive={() => updateValue(item)}
           />
 
         );

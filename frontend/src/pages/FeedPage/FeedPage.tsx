@@ -1,9 +1,6 @@
-import { useContext } from 'react';
 
 import styles from './FeedPage.module.css';
 
-import { IUser } from '../../interfaces/user.interface';
-import { UserContext } from '../../contexts/user.context';
 
 import RecommBar from '../../components/RecommBar/RecommBar';
 import Feed from '../../components/Feed/Feed';

@@ -7,9 +7,6 @@ import { IUser } from '../../interfaces/user.interface';
 
 import { UserContext } from '../../contexts/user.context';
 
-import homeStroke from './../../assets/icons/home-stroke.svg';
-import homeFilled from './../../assets/icons/home-filled.svg';
-
 import feedStroke from './../../assets/icons/feed-stroke.svg';
 import feedFilled from './../../assets/icons/feed-filled.svg';
 
@@ -19,21 +16,16 @@ import searchFilled from './../../assets/icons/search-filled.svg';
 import notificationsStroke from './../../assets/icons/notifications-stroke.svg';
 import notificationsFilled from './../../assets/icons/notifications-filled.svg';
 
-import messagesStroke from './../../assets/icons/messages-stroke.svg';
-import messagesFilled from './../../assets/icons/messages-filled.svg';
-
 import libraryStroke from './../../assets/icons/library-stroke.svg';
-import libraryFilled from './../../assets/icons/library-filled.svg';
 
 import settingsStroke from './../../assets/icons/settings-stroke.svg';
-import settingsFilled from './../../assets/icons/settings-filled.svg';
 
 import accountStroke from './../../assets/icons/account-stroke.svg';
 import accountFilled from './../../assets/icons/account-filled.svg';
 
 import report from './../../assets/icons/report-stroke.svg';
-import plus from './../../assets/icons/plus.svg';
-import CreateCommentForm from '../CreateCommentForm/CreateCommentForm';
+
+
 import CreateRecipeForm from '../CreateRecipeForm/CreateRecipeForm';
 import Button from '../Button/Button';
 import SignInForm from '../SignInForm/SignInForm';
@@ -43,7 +35,7 @@ import SignUpForm from '../SignUpForm/SignUpForm';
 
 const MobileNavbar = () => {
 
-  const { user, loading } = useContext<{ user: IUser | null, loading: boolean }>(UserContext);
+  const user = useContext<{ user: IUser | null, loading: boolean }>(UserContext).user;
 
   const location: Location = useLocation();
   const navigate = useNavigate();
@@ -121,137 +113,146 @@ const MobileNavbar = () => {
 
     <div className={ styles.container }>
 
-      <div className={ styles.top }>
+      { user && (
 
-        <div className={ styles.topContainer }>
+        <div className={ styles.top }>
 
-          <div className={ styles.topLeft }>
+          <div className={ styles.topContainer }>
 
-            <Button
-              type='secondary'
-              handleClick={ () => navigate('/settings') }
-              icon={ settingsStroke }
-              width='40px'
-              height='40px'
-            />
-
-            {/* { user?.admin && (
+            <div className={ styles.topLeft }>
 
               <Button
                 type='secondary'
-                handleClick={ () => navigate('/reports') }
-                icon={ report }
+                handleClick={ () => navigate('/settings') }
+                icon={ settingsStroke }
                 width='40px'
                 height='40px'
               />
 
-            )} */}
+              {/* { user?.admin && (
 
-          </div>
+                <Button
+                  type='secondary'
+                  handleClick={ () => navigate('/reports') }
+                  icon={ report }
+                  width='40px'
+                  height='40px'
+                />
 
-          <div className={ styles.topRight }>
+              )} */}
 
-            {/* <Button
-              type='secondary'
-              handleClick={ () => navigate('/notifications') }
-              icon={ notificationsStroke }
-              width='40px'
-              height='40px'
-            /> */}
+            </div>
 
-            { user?.admin && (
+            <div className={ styles.topRight }>
+
+              {/* <Button
+                type='secondary'
+                handleClick={ () => navigate('/notifications') }
+                icon={ notificationsStroke }
+                width='40px'
+                height='40px'
+              /> */}
+
+              { user?.admin && (
+
+                <Button
+                  type='secondary'
+                  handleClick={ () => navigate('/reports') }
+                  icon={ report }
+                  width='40px'
+                  height='40px'
+                />
+
+              )}
 
               <Button
                 type='secondary'
-                handleClick={ () => navigate('/reports') }
-                icon={ report }
+                handleClick={ () => navigate('/library') }
+                icon={ libraryStroke }
                 width='40px'
                 height='40px'
               />
 
-            )}
-
-            <Button
-              type='secondary'
-              handleClick={ () => navigate('/library') }
-              icon={ libraryStroke }
-              width='40px'
-              height='40px'
-            />
+            </div>
 
           </div>
 
         </div>
-
-      </div>
+        
+      )}
+      
 
       <div className={ styles.bottom }>
 
-        { (user ? items : itemsNotLogged).map((item: any, index: number) => {
+        <div className={ styles.bottomContainer }>
 
-          if (item.id === 'create') {
+          { (user ? items : itemsNotLogged).map((item: any, index: number) => {
 
-            return (
+            if (item.id === 'create') {
 
-              <div key={ index } className={ styles.item }>
+              return (
 
-                  <CreateRecipeForm buttonData={{
+                <div key={ index } className={ styles.item }>
+
+                    <CreateRecipeForm buttonData={{
+                      width: '100%',
+                      height: '100%'
+                    }} full={ true } />
+
+                </div>
+
+              );
+
+            }
+
+            if (item.id === 'signin') {
+              
+              return (
+
+                <div key={ index } className={ styles.item }>
+
+                  <SignInForm buttonData={{
                     width: '100%',
                     height: '100%'
                   }} full={ true } />
 
-              </div>
+                </div>
 
-            );
+              );
 
-          }
+            }
 
-          if (item.id === 'signin') {
-            
-            return (
+            if (item.id === 'signup') {
 
-              <div key={ index } className={ styles.item }>
+              return (
 
-                <SignInForm buttonData={{
-                  width: '100%',
-                  height: '100%'
-                }} full={ true } />
+                <div key={ index } className={ styles.item }>
 
-              </div>
+                  <SignUpForm buttonData={{
+                    width: '100%',
+                    height: '100%'
+                  }} full={ true } />
 
-            );
+                </div>
 
-          }
+              );
 
-          if (item.id === 'signup') {
+            }
 
             return (
 
-              <div key={ index } className={ styles.item }>
+              <Link key={ index } to={ `/${ item.id }` } className={ `${ styles.item } ${ path === `/${ item.id }` ? styles.active : '' }` }>
+              
+                <img src={ path !== `/${ item.id }` ? item.icon : item.iconActive } className={ styles.icon } />
+                {/* <span className={ styles.title }>{ item.title }</span> */}
 
-                <SignUpForm buttonData={{
-                  width: '100%',
-                  height: '100%'
-                }} full={ true } />
-
-              </div>
+              </Link>
 
             );
 
-          }
+          })}
 
-          return (
-
-            <Link key={ index } to={ `/${ item.id }` } className={ `${ styles.item } ${ path === `/${ item.id }` ? styles.active : '' }` }>
-            
-              <img src={ path !== `/${ item.id }` ? item.icon : item.iconActive } className={ styles.icon } />
-              {/* <span className={ styles.title }>{ item.title }</span> */}
-
-            </Link>
-
-          );
-
-        })}
+        </div>
 
       </div>
 

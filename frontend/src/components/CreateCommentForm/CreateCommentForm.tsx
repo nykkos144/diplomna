@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import styles from './CreateCommentForm.module.css';
-
 import { IButton } from '../../interfaces/button.interface';
 import { IFormData } from '../../interfaces/formData.interface';
 import { IMultiForm } from '../../interfaces/multiform.interface';

@@ -58,6 +58,7 @@
 .container span {
 
   font-size: .8125rem;
+  white-space: nowrap;
 
 }
 

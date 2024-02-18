@@ -21,7 +21,7 @@ import RecommBar from '../RecommBar/RecommBar';
 
 const Feed = () => {
   
-  const { user, loading } = useContext<{ user: IUser | null, loading: boolean }>(UserContext);
+  const user = useContext<{ user: IUser | null, loading: boolean }>(UserContext).user;
 
   const [type, setType] = useState<string>('');
 

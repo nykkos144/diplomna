@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import styles from './App.module.css';
@@ -58,7 +58,7 @@ const Container = () => {
 
       ) : (
 
-        <div className={ styles.container }>
+        <div className={ `${ styles.container } ${ user ? styles.logged : '' }` }>
 
           <Navbar />
           <MobileNavbar />
@@ -80,6 +80,7 @@ const Container = () => {
             <Route path='/recipe/:id' element={ <RecipePage /> } />
             <Route path='/user/:username' element={ <UserPage /> } />
 
+            <Route path='/' element={ <Navigate to='/feed' /> } />
             <Route path='*' element={ <NotFound /> } />
 
           </Routes>

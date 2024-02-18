@@ -26,13 +26,20 @@
 
 }
 
+.controlTop {
+
+  gap: 20px;
+
+}
+
 .controlTop, .controlBottom {
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  gap: 20px;
+  /* gap: 20px; */
+  row-gap: 10px;
 
   width: 100%;
   height: fit-content;
@@ -169,7 +176,7 @@
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 390px) {
   
   .controlBottom {
 

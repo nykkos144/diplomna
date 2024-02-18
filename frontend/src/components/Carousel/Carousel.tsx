@@ -5,7 +5,6 @@ import arrLeft from './../../assets/icons/arr-left.svg';
 import arrRight from './../../assets/icons/arr-right.svg';
 
 import Button from '../Button/Button';
-import ProgressiveImage from 'react-progressive-graceful-image';
 
 
 const Carousel = ({ images }: { images: string [] }) => {

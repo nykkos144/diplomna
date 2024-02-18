@@ -2,7 +2,6 @@ import styles from './Input.module.css';
 
 import { IInput } from '../../interfaces/input.interface';
 
-import { IFormDataPropsInner } from '../../interfaces/formData.interface';
 import { ChangeEvent } from 'react';
 
 

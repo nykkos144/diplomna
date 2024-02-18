@@ -108,6 +108,12 @@
 
   }
 
+  .container:not(.logged) {
+
+    padding-top: 30px;
+
+  }
+
 }
 
 
@@ -126,6 +132,12 @@
     padding: 90px 20px;
     /* padding: 80px 20px; */
   
+  }
+
+  .container:not(.logged) {
+
+    padding-top: 30px;
+
   }
 
 }

@@ -233,6 +233,7 @@ const RecipePost = ({ recipe, user, followedOut, handleFollow, handleUnfollow }:
             }}
             buttonData={{
               content: recipe.commentCount?.toString(),
+              width: 'fit-content',
               height: '34px',
               iconSize: '14px',
               fontSize: '12px',

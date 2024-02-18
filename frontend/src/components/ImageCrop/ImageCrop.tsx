@@ -24,6 +24,8 @@ const ImageCrop = ({
 
   const onCropComplete = async (croppedArea: any, croppedAreaPixels: any) => {
 
+    if (croppedArea) {  }
+
     setCroppedImage(await getCroppedImg(image, croppedAreaPixels));
 
   }

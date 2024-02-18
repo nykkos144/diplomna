@@ -1,4 +1,3 @@
-import styles from './NotificationsPage.module.css';
 
 import Notifications from '../../components/Notifications/Notifications';
 

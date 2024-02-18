@@ -4,7 +4,6 @@ import styles from './Recipe.module.css';
 import recipePageStyles from './../../pages/RecipePage/RecipePage.module.css';
 
 import { IRecipePost } from '../../interfaces/recipePost.interface';
-import { IRecipe } from '../../interfaces/recipe.interface';
 import { IUser } from '../../interfaces/user.interface';
 import { ICommentPost } from '../../interfaces/commentPost.interface';
 
@@ -12,7 +11,6 @@ import { UserContext } from '../../contexts/user.context';
 
 import { getTimeElapsed } from '../../utils/time.util';
 
-import * as userService from './../../services/user.service';
 import * as followService from './../../services/follow.service';
 import * as reportService from './../../services/report.service';
 import * as recipeService from './../../services/recipe.service';

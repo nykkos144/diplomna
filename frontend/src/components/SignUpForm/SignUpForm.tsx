@@ -1,4 +1,3 @@
-import styles from './SignUpForm.module.css';
 
 import { IMultiForm } from './../../interfaces/multiform.interface';
 import { IFormData } from './../../interfaces/formData.interface';

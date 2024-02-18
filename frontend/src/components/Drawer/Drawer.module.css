@@ -124,3 +124,13 @@ body:has(.open) {
 
 
 
+@media screen and (max-width: 630px) {
+
+  .content {
+
+    padding-bottom: 100px;
+  
+  }
+
+}
+

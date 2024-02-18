@@ -4,7 +4,6 @@ import styles from './FilterBar.module.css';
 
 import { IFormData } from '../../interfaces/formData.interface';
 
-import Button from '../Button/Button';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import Dropdown from '../Dropdown/Dropdown';
 import AddBlock from '../AddBlock/AddBlock';
@@ -15,14 +14,13 @@ const FilterBar = ({
   filters,
   setFilters,
   searchType,
-  setSearchType
 
 }: {
 
   filters: IFormData,
   setFilters: (value: any) => void,
   searchType: 'all' | 'any',
-  setSearchType: (value: 'all' | 'any') => void
+  setSearchType?: (value: 'all' | 'any') => void
 
 }) => {
 

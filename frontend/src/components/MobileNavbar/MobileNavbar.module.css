@@ -1,11 +1,10 @@
-.container {
+/* .container {
 
   z-index: 100;
 
   position: fixed;
   top: 0px;
   left: 0px;
-  /* transform: translateX(-50%); */
 
   display: none;
   flex-direction: column;
@@ -13,12 +12,33 @@
   align-items: center;
 
   width: 100vw;
-  /* max-width: 560px; */
   height: 100vh;
 
   pointer-events: none;
 
   overflow: hidden;
+
+  transition: all .1s;
+
+} */
+
+.container {
+
+  z-index: 100;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  display: none;
+
+  pointer-events: none;
+
+}
+
+.container:not(:has(.top)) {
+
+  justify-content: flex-end;
 
 }
 
@@ -37,6 +57,11 @@
 
 
 .top {
+  
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
 
   display: flex;
   justify-content: center;
@@ -76,13 +101,32 @@
 
 .bottom {
 
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+}
+
+
+.bottomContainer {
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
+  width: 560px;
+  height: 100%;
+
   border-top: 1px solid var(--border);
 
 }
+
 
 .item {
 
@@ -137,14 +181,8 @@
 }
 
 @media screen and (max-width: 630px) {
-  
-  .topContainer {
 
-    width: 100%;
-
-  }
-
-  .top, .bottom {
+  .top, .bottom, .topContainer, .bottomContainer {
 
     width: 100%;
 

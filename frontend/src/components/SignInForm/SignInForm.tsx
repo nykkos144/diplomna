@@ -1,4 +1,3 @@
-import styles from './SignInForm.module.css';
 
 
 import { IMultiForm } from './../../interfaces/multiform.interface';

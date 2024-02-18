@@ -1,11 +1,10 @@
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './Ellipsis.module.css';
 import navbarStyles from './../Navbar/Navbar.module.css';
 
 import { IEllipsis, IEllipsisItem } from '../../interfaces/ellipsis.interface';
 import { IButton } from '../../interfaces/button.interface';
-import { IStyling } from '../../interfaces/styling.interface';
 
 import arrRight from './../../assets/icons/arr-right.svg';
 import Button from '../Button/Button';

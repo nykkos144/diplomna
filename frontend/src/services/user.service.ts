@@ -1,16 +1,19 @@
-import axios, { Axios, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import { IUser } from './../interfaces/user.interface';
 import { IRecipePost } from '../interfaces/recipePost.interface';
 import { ICommentPost } from '../interfaces/commentPost.interface';
 import { INotificationPost } from '../interfaces/notificationPost.interface';
 
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+import BACKEND_URL from './../constants/backendUrl.constant';
+
 
 const getLoggedUser = async (): Promise<IUser> => {
 
   const res: AxiosResponse<IUser | null> = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/user',
+    url: `${ BACKEND_URL }/api/user`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -30,7 +33,7 @@ const login = async (username: string, password: string): Promise<string> => {
 
   const res: AxiosResponse<any> = await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/user/login',
+    url: `${ BACKEND_URL }/api/user/login`,
     data: {
       username: username,
       password: password
@@ -52,7 +55,7 @@ const checkUnique = async (username: string, email: string): Promise<void> => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/user/check-unique',
+    url: `${ BACKEND_URL }/api/user/check-unique`,
     data: {
       username,
       email
@@ -66,7 +69,7 @@ const createUser = async (formData: any) => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/user/create',
+    url: `${ BACKEND_URL }/api/user/create`,
     data: formData
   });
 
@@ -76,7 +79,7 @@ const getUser = async (username: string): Promise<IUser> => {
 
   const data: AxiosResponse<IUser> = await axios({
     method: 'GET',
-    url: `http://localhost:5000/api/user/username/${ username }`,
+    url: `${ BACKEND_URL }/api/user/username/${ username }`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -90,7 +93,7 @@ const getUserRecipes = async (username: string): Promise<IRecipePost []> => {
 
   const data: AxiosResponse<IRecipePost []> = await axios({
     method: 'GET',
-    url: `http://localhost:5000/api/user/username/${ username }/recipes`,
+    url: `${ BACKEND_URL }/api/user/username/${ username }/recipes`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -104,7 +107,7 @@ const getUserComments = async (username: string): Promise<ICommentPost []> => {
 
   const data: AxiosResponse<ICommentPost []> = await axios({
     method: 'GET',
-    url: `http://localhost:5000/api/user/username/${ username }/comments`,
+    url: `${ BACKEND_URL }/api/user/username/${ username }/comments`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -119,7 +122,7 @@ const getRecomms = async (): Promise<IUser []> => {
 
   const data: AxiosResponse<IUser []> = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/user/recomms',
+    url: `${ BACKEND_URL }/api/user/recomms`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -134,7 +137,7 @@ const getFollowingFeed = async (): Promise<IRecipePost []> => {
 
   const data: AxiosResponse<any []> = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/user/feed',
+    url: `${ BACKEND_URL }/api/user/feed`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -148,7 +151,7 @@ const getDiscoverFeed = async (): Promise<IRecipePost []> => {
 
   const data: AxiosResponse<any []> = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/user/discover',
+    url: `${ BACKEND_URL }/api/user/discover`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -163,7 +166,7 @@ const saveRecipe = async (recipeId: string) => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/user/save',
+    url: `${ BACKEND_URL }/api/user/save`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },
@@ -176,7 +179,7 @@ const unsaveRecipe = async (recipeId: string) => {
 
   await axios({
     method: 'DELETE',
-    url: 'http://localhost:5000/api/user/unsave',
+    url: `${ BACKEND_URL }/api/user/unsave`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },
@@ -190,7 +193,7 @@ const getNotifications = async (): Promise<INotificationPost []> => {
 
   const data: AxiosResponse<INotificationPost []> = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/user/notifications',
+    url: `${ BACKEND_URL }/api/user/notifications`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -204,7 +207,7 @@ const getSaved = async (): Promise<IRecipePost []> => {
 
   const data: AxiosResponse<IRecipePost []> = await axios({
     method: 'GET',
-    url: `http://localhost:5000/api/user/saved`,
+    url: `${ BACKEND_URL }/api/user/saved`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
@@ -219,7 +222,7 @@ const updateSettings = async (formData: any): Promise<void> => {
 
   await axios({
     method: 'PUT',
-    url: `http://localhost:5000/api/user`,
+    url: `${ BACKEND_URL }/api/user`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     },
@@ -232,7 +235,7 @@ const deleteUser = async (reportedId: string): Promise<void> => {
 
   await axios({
     method: 'DELETE',
-    url: `http://localhost:5000/api/user/id/${ reportedId }`,
+    url: `${ BACKEND_URL }/api/user/id/${ reportedId }`,
     headers: {
       'Authorization': localStorage.getItem('Authorization')
     }
