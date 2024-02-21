@@ -83,6 +83,7 @@
 .mainData h1, .mainData p {
 
   margin: 0px;
+  word-break: break-word;
 
 }
 
@@ -245,6 +246,7 @@
 
   text-wrap: wrap;
   word-wrap: break-word;
+  word-break: break-word;
 
   padding: 12px 0px;
 

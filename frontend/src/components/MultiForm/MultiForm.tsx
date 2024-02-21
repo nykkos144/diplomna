@@ -67,7 +67,7 @@ const MultiForm = ({
   const isLoading = currentStep === steps.length;
   const isCompleted = currentStep === steps.length + 1;
 
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<any>(null);
   
   useEffect(() => {
     

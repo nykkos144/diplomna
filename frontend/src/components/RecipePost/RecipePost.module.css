@@ -131,6 +131,8 @@
   font-size: .8125rem;
   line-height: 1.125rem;
 
+  word-break: break-word;
+
   display: -webkit-box;
   line-clamp: 3;
   -webkit-line-clamp: 3;

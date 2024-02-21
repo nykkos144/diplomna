@@ -24,6 +24,7 @@
   height: fit-content;
 
   font-size: .8125rem;
+  word-break: break-word;
 
 }
 

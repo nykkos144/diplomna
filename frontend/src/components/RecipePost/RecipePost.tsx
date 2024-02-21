@@ -42,7 +42,7 @@ const RecipePost = ({ recipe, user, followedOut, handleFollow, handleUnfollow }:
     setSaved(loggedUser && loggedUser.saved?.includes(recipe._id!) ? true : false);
     setFollowed(followedOut ? followedOut : user.followed || false);
 
-  }, [recipe, user, followedOut]);
+  }, [recipe, user, followedOut, loggedUser]);
 
 
   const tags = [...recipe.dietPref, ...recipe.mealType, ...recipe.cuisineType];
