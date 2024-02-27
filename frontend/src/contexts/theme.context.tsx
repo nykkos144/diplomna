@@ -53,7 +53,7 @@ const ThemeProvider = ({ children }: any) => {
       root.style.setProperty('--primary', 'white');
       root.style.setProperty('--primary-opp', 'black');
       
-      root.style.setProperty('--secondary', '#f4f4f4');
+      root.style.setProperty('--secondary', '#f7f7f7');
       root.style.setProperty('--secondary-hover', '#f0f0f0');
       
       root.style.setProperty('--border', '#eeeeee');

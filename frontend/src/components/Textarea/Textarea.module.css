@@ -22,6 +22,7 @@
 .textarea::placeholder {
 
   color: var(--secondary-text);
+  opacity: 1;
 
 }
 
