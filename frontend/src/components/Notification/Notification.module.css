@@ -74,7 +74,7 @@
 }
 
 .main a:hover {
-
+  
   color: var(--main);
 
 }
@@ -85,6 +85,8 @@
   grid-area: secondary;
 
   font-size: .8125rem;
+
+  word-break: break-word;
 
 }
 

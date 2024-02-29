@@ -147,8 +147,7 @@ const Notifications = () => {
       <div className={ styles.control }>
 
         <Dropdown
-          // items={ ['All', 'Seen', 'Not seen', 'Follows', 'Messages', 'Comments', 'Ratings'] }
-          items={ ['All', 'Follows', 'Messages', 'Comments', 'Ratings'] }
+          items={ ['All', 'Follows', 'Comments', 'Ratings'] }
           value={ type }
           updateValue={ setType }
           extra='arrow'
