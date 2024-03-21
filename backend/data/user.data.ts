@@ -1228,9 +1228,6 @@ const getSaved = async (id: string): Promise<IRecipePost []> => {
 
 const updateSettings = async (data: any): Promise<void> => {
 
-  // const { userId, fullName, bio, image, backdrop } = data;
-  // await UserModel.findByIdAndUpdate(userId, { fullName: fullName });
-
   const { userId, ...updateFields } = data;
   await UserModel.findByIdAndUpdate(userId, Object.fromEntries(Object.entries(updateFields).filter(([_, value]) => value !== undefined)));
 
