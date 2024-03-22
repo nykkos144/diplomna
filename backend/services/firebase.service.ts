@@ -1,18 +1,11 @@
 import * as crypto from 'crypto';
-// import { Blob } from 'buffer';
 
 import * as admin from 'firebase-admin';
-
-// const FIREBASE_KEY = process.env.FIREBASE_KEY;
-
-// import * as serviceAccount from './../temp.json';
 
 const FIREBASE_KEY = process.env.FIREBASE_KEY;
 const FIREBASE_URL = process.env.FIREBASE_URL;
 
-
 admin.initializeApp({
-  // credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
   credential: admin.credential.cert(JSON.parse(FIREBASE_KEY!) as admin.ServiceAccount),
   storageBucket: FIREBASE_URL,
 });
