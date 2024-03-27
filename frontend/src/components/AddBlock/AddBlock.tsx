@@ -137,6 +137,7 @@ const AddBlock = ({
               <div key={ index } className={ styles.value } onClick={() => handleRemove(index)}>
 
                 { type === 'ingredients' ? (
+
                     <span>{ add.ingredient.charAt(0).toUpperCase() + add.ingredient.slice(1) } { add.quantity }{ add.metric }</span>
       
                 ) : type === 'steps' ? (
