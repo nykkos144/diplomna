@@ -31,7 +31,6 @@ const uploadPicture = async (picture: any): Promise<string> => {
     },
   });
 
-  // Get the signed URL
   const [url] = await file.getSignedUrl({
     action: 'read',
     expires: '01-01-3000',
