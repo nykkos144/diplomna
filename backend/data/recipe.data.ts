@@ -20,18 +20,9 @@ const getRecipeById = async (id: string | null, recipeId: string): Promise<IReci
   // const data: IRecipe | null = await RecipeModel.findById(id);
 
   const data: IRecipePost = (await RecipeModel.aggregate([
-    {
-      $match: {
-        _id: new mongoose.Types.ObjectId(recipeId)
-      }
-    },
-    {
-      $addFields: {
-        recipe: '$$ROOT',
-      },
-    },
-    // GET RECIPE CREATOR DATA
-    {
+    { $match: { _id: new mongoose.Types.ObjectId(recipeId) } },
+    { $addFields: { recipe: '$$ROOT', } },
+    { 
       $lookup: {
         from: 'users',
         let: { userId: '$recipe.userId' },
