@@ -53,24 +53,13 @@ const Entity = ({
         
         <ProgressiveImage src={ image! } placeholder="">
           {(src, loading, style) => (
-            
             loading ? (
-
               <div className={ styles.image } style={{ width: imageSize, height: imageSize }}></div>
-
             ) : (
-
-              <img
-                src={ src }
-                className={ styles.image }
-                style={{
-                  ...style,
-                  backgroundColor: loading ? '#202020' : 'transparent',
-                }}
+              <img src={ src } className={ styles.image } style={{ ...style,
+                  backgroundColor: loading ? '#202020' : 'transparent' }}
               />
-              
             )
-
           )}
         </ProgressiveImage>
 
